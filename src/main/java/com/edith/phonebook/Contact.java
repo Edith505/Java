@@ -1,9 +1,16 @@
 package com.edith.phonebook;
 
 public class Contact {
+
     private String lastName;
     private String firstName;
     private String phoneNumber;
+
+    public Contact(String lastName, String firstName, String phoneNumber) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.phoneNumber = phoneNumber;
+    }
 
     public String getLastName() {
         return this.lastName;

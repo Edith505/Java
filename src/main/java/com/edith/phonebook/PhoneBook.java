@@ -13,17 +13,16 @@ public class PhoneBook {
 		String userFirstName = getUserInput("Entrer votre Prenom : ");
 		String userPhoneNumber = getUserInput("Entrer votre Numero de telephone : ");
 
-		Contact newContact = new Contact();
+		Contact newContact = new Contact(userLastName, userFirstName, userPhoneNumber);
 		newContact.setLastName(userLastName);
 		newContact.setFirstName(userFirstName);
 		newContact.setPhoneNumber(userPhoneNumber);
 
-		System.out.println(userLastName);
-		System.out.println(userFirstName);
-		System.out.println(userPhoneNumber);
-
 		System.out.println("Vous avez saisi les informations suivantes { Nom : " + userLastName + " ; Prenom : "
 				+ userFirstName + " ; Numero telephone : " + userPhoneNumber + " }");
+
+		System.out.println(newContact);
+
 		sc.close();
 
 	}
