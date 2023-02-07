@@ -17,11 +17,7 @@ public class PhoneBook {
 		newContact.setLastName(userLastName);
 		newContact.setFirstName(userFirstName);
 		newContact.setPhoneNumber(userPhoneNumber);
-
-		System.out.println("Vous avez saisi les informations suivantes { Nom : " + userLastName + " ; Prenom : "
-				+ userFirstName + " ; Numero telephone : " + userPhoneNumber + " }");
-
-		System.out.println(newContact);
+		System.out.println(newContact.toString());
 
 		sc.close();
 
