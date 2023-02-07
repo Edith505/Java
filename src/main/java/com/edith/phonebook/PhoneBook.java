@@ -1,5 +1,6 @@
 package com.edith.phonebook;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class PhoneBook {
@@ -18,6 +19,12 @@ public class PhoneBook {
 		newContact.setFirstName(userFirstName);
 		newContact.setPhoneNumber(userPhoneNumber);
 		System.out.println(newContact.toString());
+
+		File phoneBookFile = new File("C:\\Users\\edith\\Documents\\BOSS MANOA\\JAVA\\first-app\\phonebook.txt");
+		if (phoneBookFile.exists())
+			System.out.println("Le fichier existe a l'emplacement donner");
+		else
+			System.out.println("Le fichier n'existe pas");
 
 		sc.close();
 
