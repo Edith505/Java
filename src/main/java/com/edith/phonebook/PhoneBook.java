@@ -1,6 +1,9 @@
 package com.edith.phonebook;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class PhoneBook {
@@ -25,6 +28,11 @@ public class PhoneBook {
 			System.out.println("Le fichier existe a l'emplacement donner");
 		else
 			System.out.println("Le fichier n'existe pas");
+		try {
+			BufferedWriter fileWriter = new BufferedWriter(new FileWriter(phoneBookFile, true));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		sc.close();
 
