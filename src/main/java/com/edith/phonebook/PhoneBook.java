@@ -22,6 +22,8 @@ public class PhoneBook {
 		newContact.setFirstName(userFirstName);
 		newContact.setPhoneNumber(userPhoneNumber);
 		System.out.println(newContact.toString());
+		File phoneBookFile = getOrCreatePhoneBookFile(
+				"C:\\Users\\edith\\Documents\\BOSS MANOA\\JAVA\\first-app\\phonebook.txt");
 
 		try {
 			BufferedWriter fileWriter = new BufferedWriter(new FileWriter(phoneBookFile, true));
@@ -41,7 +43,6 @@ public class PhoneBook {
 		System.out.println(userMessage);
 		return sc.nextLine();
 	}
-	// "C:\\Users\\edith\\Documents\\BOSS MANOA\\JAVA\\first-app\\phonebook.txt"
 
 	public static File getOrCreatePhoneBookFile(String phoneBookFilePath) {
 		File phoneBookFile = new File(phoneBookFilePath);
