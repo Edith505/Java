@@ -39,6 +39,7 @@ public class PhoneBook {
 		try {
 			BufferedWriter fileWriter = new BufferedWriter(new FileWriter(phoneBookFile, true));
 			fileWriter.append(newContact.toString());
+			System.out.println("contact ajouter");
 			fileWriter.close();
 		} catch (IOException e) {
 			e.printStackTrace();
