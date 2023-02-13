@@ -23,22 +23,10 @@ public class PhoneBook {
 		newContact.setPhoneNumber(userPhoneNumber);
 		System.out.println(newContact.toString());
 
-		File phoneBookFile = new File("C:\\Users\\edith\\Documents\\BOSS MANOA\\JAVA\\first-app\\phonebook.txt");
-		if (phoneBookFile.exists())
-			System.out.println("Le fichier existe a l'emplacement donner");
-		else
-			System.out.println("Le fichier n'existe pas");
-
-		try {
-			phoneBookFile.createNewFile();
-			System.out.println("Le fichier a ete creer");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
 		try {
 			BufferedWriter fileWriter = new BufferedWriter(new FileWriter(phoneBookFile, true));
 			fileWriter.append(newContact.toString());
+			fileWriter.append('\n');
 			System.out.println("contact ajouter");
 			fileWriter.close();
 		} catch (IOException e) {
@@ -53,5 +41,21 @@ public class PhoneBook {
 		System.out.println(userMessage);
 		return sc.nextLine();
 	}
+	// "C:\\Users\\edith\\Documents\\BOSS MANOA\\JAVA\\first-app\\phonebook.txt"
 
+	public static File getOrCreatePhoneBookFile(String phoneBookFilePath) {
+		File phoneBookFile = new File(phoneBookFilePath);
+		if (phoneBookFile.exists()) {
+			return phoneBookFile;
+		}
+
+		try {
+			phoneBookFile.createNewFile();
+			System.out.println("Le fichier a ete creer (" + phoneBookFilePath + ")");
+			return phoneBookFile;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
