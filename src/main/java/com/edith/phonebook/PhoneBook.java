@@ -27,7 +27,7 @@ public class PhoneBook {
 
 		try {
 			BufferedWriter fileWriter = new BufferedWriter(new FileWriter(phoneBookFile, true));
-			fileWriter.append(newContact.toString());
+			fileWriter.append(newContact.toString() + "\n");
 			fileWriter.append('\n');
 			System.out.println("contact ajouter");
 			fileWriter.close();
